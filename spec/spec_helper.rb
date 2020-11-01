@@ -14,6 +14,9 @@ SimpleCov.start
 ENV['RACK_ENV'] = 'test'
 
 require File.join(File.dirname(__FILE__), '..', 'app.rb')
+
+require 'features/register_helper'
+
 Capybara.app = RockPaperScissors
 
 RSpec.configure do |config|

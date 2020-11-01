@@ -25,7 +25,13 @@ class RockPaperScissors < Sinatra::Base
   get '/game' do
     #get the name from the session store
     @name = session[:name]
+    @shape = session[:shape]
     erb :game
+  end
+
+  post '/game' do
+    session[:shape] = params[:shape]
+    redirect '/game'
   end
 
   #start the server if ruby file executed directly

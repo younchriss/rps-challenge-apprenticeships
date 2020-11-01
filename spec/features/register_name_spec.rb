@@ -6,9 +6,7 @@ require 'spec_helper'
 
 feature 'register name' do
     scenario 'register name' do
-        visit('/')
-        fill_in 'name', with: 'Chris'
-        click_button 'Submit'
+        register
         expect(page).to have_content 'Chris'
     end
 end
